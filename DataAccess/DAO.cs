@@ -24,7 +24,10 @@ namespace DataAccess
 
         protected internal static T DataTableToObject<T>(DataTable objectTable)
         {
-            T obj = loadObject<T>(objectTable.Rows[0]);
+            T obj = default(T);
+
+            if (objectTable.Rows.Count > 0)
+             obj = loadObject<T>(objectTable.Rows[0]);
 
             return obj;
         }
@@ -42,21 +45,24 @@ namespace DataAccess
 
             foreach (PropertyInfo infoElement in pi)
             {
-                if (row.Table.Columns.Contains(infoElement.Name))
+                if(!infoElement.IsSpecialName)
                 {
-                    if (row[infoElement.Name] == DBNull.Value)
+                    if (row.Table.Columns.Contains(infoElement.Name))
                     {
-                        infoElement.SetValue(obj, null, null);
+                        if (row[infoElement.Name] == DBNull.Value)
+                        {
+                            infoElement.SetValue(obj, null, null);
+                        }
+                        else
+                        {
+                            infoElement.SetValue(obj, Convert.ChangeType(row[infoElement.Name], Type.GetType(infoElement.PropertyType.FullName)), null);
+                        }
                     }
                     else
                     {
-                        infoElement.SetValue(obj, Convert.ChangeType(row[infoElement.Name], Type.GetType(infoElement.PropertyType.FullName)), null);
+                        infoElement.SetValue(obj, null, null);
                     }
-                }
-                else
-                {
-                    infoElement.SetValue(obj, null, null);
-                }
+                }                
 
             }
 

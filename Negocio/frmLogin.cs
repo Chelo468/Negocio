@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Negocio
 {
@@ -32,6 +33,7 @@ namespace Negocio
 
             if(usuario != null && usuario.id_usuario > 0)
             {
+                Sesion.usuario = usuario;
                 frmPrincipal principal = new frmPrincipal(usuario);
 
                 this.Hide();

@@ -27,5 +27,32 @@ namespace Servicios
 
             return cliente;
         }
+
+        public static bool crear(ref Cliente cliente)
+        {
+            try
+            {
+                Cliente clienteExistente = ClienteDataAccess.getExistente(cliente);
+
+                if(clienteExistente != null && clienteExistente.id_cliente > 0)
+                {
+                    cliente = clienteExistente;
+                    return false;
+                }
+                else
+                {
+                    cliente.fecha_alta = DateTime.Now;
+                    ClienteDataAccess.crear(ref cliente);
+                    return true;
+                }
+
+                
+               
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("El usuario ya existe");
+            }
+        }
     }
 }

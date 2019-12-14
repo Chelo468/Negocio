@@ -56,6 +56,12 @@
     <Compile Include="Clientes\frmABMCliente.Designer.cs">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmABMProducto.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmABMProducto.Designer.cs">
+      <DependentUpon>frmABMProducto.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -68,6 +74,12 @@
     <Compile Include="frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
+    <Compile Include="Productos\frmProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Productos\frmProductos.Designer.cs">
+      <DependentUpon>frmProductos.cs</DependentUpon>
+    </Compile>
     <Compile Include="Ventas\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -79,11 +91,17 @@
     <EmbeddedResource Include="Clientes\frmABMCliente.resx">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmABMProducto.resx">
+      <DependentUpon>frmABMProducto.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Productos\frmProductos.resx">
+      <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

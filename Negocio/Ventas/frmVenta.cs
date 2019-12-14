@@ -1,5 +1,4 @@
 ﻿using Entidades;
-using iTextSharp.text.pdf;
 using Servicios;
 using System;
 using System.Collections.Generic;
@@ -24,6 +23,11 @@ namespace Negocio
 
         public frmVenta(Usuario usuario)
         {
+            if(usuario.id_usuario == 0)
+            {
+                MessageBox.Show("Debe iniciar sesión para acceder a este formulario");
+                return;
+            }
             this.usuario = usuario;
             InitializeComponent();
         }
@@ -50,17 +54,31 @@ namespace Negocio
 
                         if (cliente.id_cliente > 0)
                         {
-
+                            txtCliente.Text = cliente.ToString();
                         }
                     }
                 }
             }
             else
             {
-                Cliente cliente = new Cliente();
-                new frmABMCliente(cliente);
+                try
+                {
+                    Cliente cliente = new Cliente();
+                    frmABMCliente formCliente = new frmABMCliente(cliente, usuario);
 
-                txtCliente.Text = cliente.descripcion;
+                    formCliente.ShowDialog();
+
+                    if(cliente.id_cliente > 0)
+                    {
+                        txtCodigoCliente.Text = cliente.id_cliente.ToString();
+                        txtCliente.Text = cliente.ToString();
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
+                
             }
         }
     }
