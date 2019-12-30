@@ -1,4 +1,5 @@
 ﻿using Entidades;
+using Servicios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -8,23 +9,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Negocio
 {
     public partial class frmPrincipal : Form
     {
-        public Usuario usuario { get; set; }
-        private frmPrincipal()
-        {
-            InitializeComponent();
-        }
 
-        public frmPrincipal(Usuario usuario)
+        public frmPrincipal()
         {
-            if(usuario != null && usuario.id_usuario > 0)
+            if (SesionService.getUsuario() != null && SesionService.getUsuario().id_usuarios > 0)
             {
-                this.usuario = usuario;
-
                 InitializeComponent();
             }
             else
@@ -41,7 +36,7 @@ namespace Negocio
 
         private void nuevaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            mostrarForm(new frmVenta(this.usuario));
+            mostrarForm(new frmVenta());
         }
 
         private void mostrarForm(Form formAMostrar)

@@ -50,57 +50,57 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Clientes\frmABMCliente.cs">
+    <Compile Include="Forms\Clientes\frmABMCliente.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Clientes\frmABMCliente.Designer.cs">
+    <Compile Include="Forms\Clientes\frmABMCliente.Designer.cs">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmABMProducto.cs">
+    <Compile Include="Forms\frmABMProducto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmABMProducto.Designer.cs">
+    <Compile Include="Forms\frmABMProducto.Designer.cs">
       <DependentUpon>frmABMProducto.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmLogin.cs">
+    <Compile Include="Forms\frmLogin.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmLogin.Designer.cs">
+    <Compile Include="Forms\frmLogin.Designer.cs">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmPrincipal.cs">
+    <Compile Include="Forms\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmPrincipal.Designer.cs">
+    <Compile Include="Forms\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Productos\frmProductos.cs">
+    <Compile Include="Forms\Productos\frmProductos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Productos\frmProductos.Designer.cs">
+    <Compile Include="Forms\Productos\frmProductos.Designer.cs">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ventas\frmVenta.cs">
+    <Compile Include="Forms\Ventas\frmVenta.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Ventas\frmVenta.Designer.cs">
+    <Compile Include="Forms\Ventas\frmVenta.Designer.cs">
       <DependentUpon>frmVenta.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="Clientes\frmABMCliente.resx">
+    <EmbeddedResource Include="Forms\Clientes\frmABMCliente.resx">
       <DependentUpon>frmABMCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmABMProducto.resx">
+    <EmbeddedResource Include="Forms\frmABMProducto.resx">
       <DependentUpon>frmABMProducto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmLogin.resx">
+    <EmbeddedResource Include="Forms\frmLogin.resx">
       <DependentUpon>frmLogin.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmPrincipal.resx">
+    <EmbeddedResource Include="Forms\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Productos\frmProductos.resx">
+    <EmbeddedResource Include="Forms\Productos\frmProductos.resx">
       <DependentUpon>frmProductos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -112,7 +112,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Ventas\frmVenta.resx">
+    <EmbeddedResource Include="Forms\Ventas\frmVenta.resx">
       <DependentUpon>frmVenta.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">

@@ -10,25 +10,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Negocio
 {
     public partial class frmVenta : Form
     {
-        private Usuario usuario;
-        //public frmVenta()
-        //{
-        //    InitializeComponent();
-        //}
-
-        public frmVenta(Usuario usuario)
+        public frmVenta()
         {
-            if(usuario.id_usuario == 0)
+            if(SesionService.getUsuario().id_usuarios == 0)
             {
                 MessageBox.Show("Debe iniciar sesión para acceder a este formulario");
                 return;
             }
-            this.usuario = usuario;
+            
             InitializeComponent();
         }
 
@@ -64,7 +59,7 @@ namespace Negocio
                 try
                 {
                     Cliente cliente = new Cliente();
-                    frmABMCliente formCliente = new frmABMCliente(cliente, usuario);
+                    frmABMCliente formCliente = new frmABMCliente(cliente);
 
                     formCliente.ShowDialog();
 
@@ -72,6 +67,10 @@ namespace Negocio
                     {
                         txtCodigoCliente.Text = cliente.id_cliente.ToString();
                         txtCliente.Text = cliente.ToString();
+                    }
+                    else
+                    {
+                        txtCliente.Text = "No se encontró el cliente con el número solicitado";
                     }
                 }
                 catch (Exception ex)

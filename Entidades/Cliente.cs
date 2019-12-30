@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Utils;
 
 namespace Entidades
 {
@@ -16,6 +17,7 @@ namespace Entidades
         public DateTime fecha_alta { get; set; }
 
         [SpecialName]
+        [RelationDataAttribute("id_usuario")]
         public Usuario usuario_alta { get; set; }
 
         public override string ToString()

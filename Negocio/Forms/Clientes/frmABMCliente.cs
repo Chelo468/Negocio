@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Utils;
 
 namespace Negocio
 {
@@ -20,12 +21,10 @@ namespace Negocio
         //}
 
         private Cliente cliente;
-        private Usuario usuario;
 
-        public frmABMCliente(Cliente cliente, Usuario usuario)
+        public frmABMCliente(Cliente cliente)
         {
             this.cliente = cliente;
-            this.usuario = usuario;
             InitializeComponent();
         }
 
@@ -46,7 +45,7 @@ namespace Negocio
                 cliente.descripcion = txtDescripcion.Text;
                 cliente.mail = txtMail.Text;
                 cliente.telefono = txtTelefono.Text;
-                cliente.usuario_alta = usuario;
+                cliente.usuario_alta = SesionService.getUsuario();
 
                 try
                 {

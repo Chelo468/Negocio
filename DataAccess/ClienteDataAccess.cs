@@ -73,7 +73,7 @@ namespace DataAccess
                 parametros.Add(new SqlParameter("@mail", cliente.mail));
                 parametros.Add(new SqlParameter("@telefono", cliente.telefono));
                 parametros.Add(new SqlParameter("@fecha_alta", cliente.fecha_alta));
-                parametros.Add(new SqlParameter("@usuario_alta", cliente.usuario_alta.id_usuario));
+                parametros.Add(new SqlParameter("@usuario_alta", cliente.usuario_alta.id_usuarios));
 
                 DataTable result = DataAccess.executeQueryProc("clienteInsert", parametros);
 

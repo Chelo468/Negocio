@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
+using Utils;
 
 namespace Entidades
 {
@@ -17,6 +18,7 @@ namespace Entidades
         public decimal precio_venta { get; set; }
 
         [SpecialName]
+        [RelationDataAttribute("id_usuario")]
         public Usuario usuario_alta { get; set; }
     }
 }

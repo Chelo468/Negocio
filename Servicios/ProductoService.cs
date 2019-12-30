@@ -40,7 +40,7 @@ namespace Servicios
             try
             {
                 producto.fecha_alta = DateTime.Now;
-                producto.usuario_alta = Sesion.usuario;
+                producto.usuario_alta = SesionService.getUsuario();
 
                 Producto productoExistente = ProductoDataAccess.getExistente(producto);
 

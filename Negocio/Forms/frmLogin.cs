@@ -31,16 +31,31 @@ namespace Negocio
 
             usuario = UsuarioService.getByLogin(txtUsuario.Text, txtPassword.Text);
 
-            if(usuario != null && usuario.id_usuario > 0)
+            if(usuario != null && usuario.id_usuarios > 0)
             {
-                Sesion.usuario = usuario;
-                frmPrincipal principal = new frmPrincipal(usuario);
+                if(usuario.habilitado)
+                {
+                    if(!usuario.administrador)
+                    {
+                        SesionService.setUsuario(usuario);
+                        frmPrincipal principal = new frmPrincipal();
 
-                this.Hide();
+                        this.Hide();
 
-                principal.ShowDialog();
+                        principal.ShowDialog();
 
-                this.Close();
+                        this.Close();
+                    }
+                    else
+                    {
+                        //TODO: Hacer logica de administrador
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Su usuario está deshabilitado. Comuniquese con el administrador");
+                }
+                
             }
             else
             {

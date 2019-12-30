@@ -18,6 +18,9 @@ namespace Servicios
                 if (id_cliente > 0)
                 {
                     cliente = ClienteDataAccess.getById(id_cliente);
+
+                    if (cliente == null)
+                        cliente = new Cliente();
                 }
             }
             catch (Exception ex)

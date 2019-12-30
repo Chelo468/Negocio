@@ -47,17 +47,19 @@ namespace DataAccess
                     }
                 }
 
-                result.Load(comando.ExecuteReader());
-
-                conexion.Close();
+                result.Load(comando.ExecuteReader());                
 
                 return result;
             }
             catch (Exception ex)
-            {
-                
+            {                
                 throw ex;
             }
+            finally
+            {
+                conexion.Close();
+            }
+
             
         }
 
@@ -83,12 +85,15 @@ namespace DataAccess
 
                 comando.ExecuteNonQuery();
 
-                conexion.Close();
             }
             catch (Exception ex)
             {
                 
                 throw ex;
+            }
+            finally
+            {
+                conexion.Close();
             }
             
 
